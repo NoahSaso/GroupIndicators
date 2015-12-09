@@ -17,18 +17,18 @@
 @property(retain, nonatomic) IMChat *chat;
 @end
 
+// Prefs
 static BOOL colorEnabled = YES, labelEnabled = NO;
 static NSString *labelText = @"Group";
 
+// Color prefs
 static CGFloat groupRed = 0.f, groupGreen = 0.75f, groupBlue = 0.5f, groupAlpha = 0.2f,
 				nonGroupRed = 0.f, nonGroupGreen = 1.f, nonGroupBlue = 0.f, nonGroupAlpha = 0.15f;
 
 #define GROUP_COLOR [UIColor colorWithRed:groupRed green:groupGreen blue:groupBlue alpha:groupAlpha]
 #define NON_GROUP_COLOR [UIColor colorWithRed:nonGroupRed green:nonGroupGreen blue:nonGroupBlue alpha:nonGroupAlpha]
 
-static UIColor *groupColor = [UIColor colorWithRed:0.f green:0.75f blue:1.f alpha:0.2f],
-				*nonGroupColor = [UIColor colorWithRed:0.f green:1.f blue:0.f alpha:0.15f];
-
+// Default tag
 #define UILABEL_TAG 670
 
 %hook CKConversationListController
@@ -63,10 +63,13 @@ static UIColor *groupColor = [UIColor colorWithRed:0.f green:0.75f blue:1.f alph
 			// Add label to cell
 			[cell.contentView addSubview:gLabel];
 		}else {
+			// If disabled, make sure it's removed
 			if(gLabel) [gLabel removeFromSuperview];
 		}
+		// Set bg color if enabled
 		cell.backgroundColor = colorEnabled ? GROUP_COLOR : [UIColor clearColor];
 	}else {
+		// Set bg color if enabled
 		cell.backgroundColor = colorEnabled ? NON_GROUP_COLOR : [UIColor clearColor];
 		// If label for some reason exists in a non-group conversation, remove it
 		UILabel *gLabel = [cell viewWithTag:UILABEL_TAG];
