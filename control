@@ -1,0 +1,10 @@
+Package: com.noahsaso.groupindicator
+Name: GroupIndicator
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Small indicator on group conversations
+Maintainer: Noah Saso <noahsaso@gmail.com>
+Author: Noah Saso <noahsaso@gmail.com>
+Section: Tweaks
+Depiction: http://repo.noahsaso.com/deps.php?pkg=com.noahsaso.groupindicator

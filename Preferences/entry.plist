@@ -1,0 +1,10 @@
+{
+    entry = {
+	bundle = GroupIndicators;
+	cell = PSLinkCell;
+	detail = GroupIndicatorsListController;
+	icon = GroupIndicators.png;
+	isController = 1;
+	label = GroupIndicators;
+    };
+}
