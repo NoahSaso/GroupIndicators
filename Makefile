@@ -2,9 +2,9 @@ ARCHS = arm64 armv7
 
 include theos/makefiles/common.mk
 
-TWEAK_NAME = GroupIndicator
-GroupIndicator_FILES = Tweak.xm
-GroupIndicator_FRAMEWORKS = UIKit
+TWEAK_NAME = GroupIndicators
+GroupIndicators_FILES = Tweak.xm
+GroupIndicators_FRAMEWORKS = UIKit
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
